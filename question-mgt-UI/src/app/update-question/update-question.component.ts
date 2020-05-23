@@ -17,6 +17,7 @@ export class UpdateQuestionComponent implements OnInit {
     show: boolean = false;
     questionResp : Question;
     questionOptions : String[];
+    resp:boolean = false;
   
   constructor(service: QuestionServiceService) { 
     this.service=service;
@@ -46,12 +47,15 @@ export class UpdateQuestionComponent implements OnInit {
     let result : Observable<Question> = this.service.updateQuestion(finalQuestionObj, questionId);
     result.subscribe((response:Question)=>{
       this.questionResp=response;
+      this.resp=true;
     },
       err =>{
-      console.log("Error"+err);
+      this.resp= false;
+      console.log("No such Question exists.");
     });
 
     this.show=true;
+    form.reset();
 
   }
 

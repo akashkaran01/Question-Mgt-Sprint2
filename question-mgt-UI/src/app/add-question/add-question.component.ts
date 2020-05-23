@@ -52,6 +52,7 @@ export class AddQuestionComponent implements OnInit {
     });
 
     this.show=true;
+    form.reset();
 
   }
 

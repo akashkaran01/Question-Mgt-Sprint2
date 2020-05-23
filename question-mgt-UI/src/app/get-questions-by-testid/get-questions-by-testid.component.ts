@@ -13,6 +13,7 @@ export class GetQuestionsByTestidComponent implements OnInit {
   questions: Question[]=[];
   service: QuestionServiceService;
   show: boolean = false;
+  resp:boolean = false;
 
   constructor(service: QuestionServiceService) {
     this.service = service;
@@ -28,9 +29,12 @@ export class GetQuestionsByTestidComponent implements OnInit {
     let result : Observable<Question[]> = this.service.getQuestionsByTestId(testId);
     result.subscribe((response:Question[])=>{
       this.questions=response;
+      this.resp=true;
     },
       err =>{
-      console.log("Error"+err);
+        this.resp=false;
+      console.log("No such Test found.");
+      
     });
 
     this.show=true;

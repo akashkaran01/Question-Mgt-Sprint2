@@ -32,7 +32,7 @@ export class DeleteQuestionComponent implements OnInit {
     error =>{
       this.response=false;
       this.show=true;
-      console.log("Error "+error)
+      console.log("No such Question found. ");
     });
   }
 

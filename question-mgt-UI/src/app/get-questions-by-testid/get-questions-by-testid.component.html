@@ -10,37 +10,42 @@
 
         </div>
     </form>
-   
-
-<div class="form-group">
-    <div class= "container">
-        <table class ="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Question Id</th>
-                    <th>Question Title</th>
-                    <th>Question Options</th>
-                    <th>Question Answer</th>
-                    <th>Question Marks</th>
-                    <th>Chosen Answer</th>
-                    <th>Marks Scored</th>
-                </tr>
-        
-            </thead>
-            <tbody *ngFor="let question of questions">
-                <tr>
+    <div class="container" *ngIf="show">
+        <div *ngIf="resp; else elseBlock">
+            <div class="form-group">
+                <div class= "container">
+                
+                        <table class ="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>QuestionId</th>
+                                <th>Question Title</th>
+                                <th>Question Options</th>
+                                <th>Question Answer</th>
+                                <th>Question Marks</th>
+                                <th>Chosen Answer</th>
+                                <th>Marks Scored</th>
+                            </tr>
                     
-                    <td>{{question.questionId}}</td>
-                    <td>{{question.questionTitle}}</td>
-                    <td>{{question.questionOptions}}</td>
-                    <td>{{question.questionAnswer}}</td>
-                    <td>{{question.questionMarks}}</td>
-                    <td>{{question.chosenAnswer}}</td>
-                    <td>{{question.marksScored}}</td>
-                </tr>
-            </tbody>
-        </table>
+                        </thead>
+                        
+                        <tbody *ngFor="let question of questions">
+                            <tr>
+                                        
+                                        <td>{{question.questionId}}</td>
+                                        <td>{{question.questionTitle}}</td>
+                                        <td>{{question.questionOptions}}</td>
+                                        <td>{{question.questionAnswer}}</td>
+                                        <td>{{question.questionMarks}}</td>
+                                        <td>{{question.chosenAnswer}}</td>
+                                        <td>{{question.marksScored}}</td>
+                            </tr>
+                        </tbody>         
+                        </table>
+                    </div>
+                </div>
+            </div>
+        <ng-template #elseBlock><h5><b>No such Test found. Please re-check entered Test Id.</b></h5></ng-template>
+              
     </div>
-</div>
-
 </div>

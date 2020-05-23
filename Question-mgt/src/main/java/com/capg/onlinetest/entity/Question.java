@@ -19,30 +19,36 @@ public class Question {
 	private BigInteger testId;
 	
 	private String questionTitle;
-	private int questionAnswer;
-	
-	private BigDecimal questionMarks; 
-	private int chosenAnswer; 
-	private	BigDecimal marksScored; 
 	private String []questionOptions=new String[4];
+	private int questionAnswer;
+	private BigDecimal questionMarks; 
 	
-	public BigInteger getTestId() {
-		return testId;
-	}
-	public void setTestId(BigInteger testId) {
-		this.testId = testId;
-	}
+	private int chosenAnswer; 
+	private	BigDecimal marksScored;
+	
 	public BigInteger getQuestionId() {
 		return questionId;
 	}
 	public void setQuestionId(BigInteger questionId) {
 		this.questionId = questionId;
 	}
+	public BigInteger getTestId() {
+		return testId;
+	}
+	public void setTestId(BigInteger testId) {
+		this.testId = testId;
+	}
 	public String getQuestionTitle() {
 		return questionTitle;
 	}
 	public void setQuestionTitle(String questionTitle) {
 		this.questionTitle = questionTitle;
+	}
+	public String[] getQuestionOptions() {
+		return questionOptions;
+	}
+	public void setQuestionOptions(String[] questionOptions) {
+		this.questionOptions = questionOptions;
 	}
 	public int getQuestionAnswer() {
 		return questionAnswer;
@@ -67,12 +73,8 @@ public class Question {
 	}
 	public void setMarksScored(BigDecimal marksScored) {
 		this.marksScored = marksScored;
-	}
-	public String[] getQuestionOptions() {
-		return questionOptions;
-	}
-	public void setQuestionOptions(String[] questionOptions) {
-		this.questionOptions = questionOptions;
-	}
-
+	} 
+	
+	
+	
 }

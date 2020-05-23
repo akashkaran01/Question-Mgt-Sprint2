@@ -78,7 +78,7 @@
                 [class.d-none]="questionMarks.valid || questionMarks.untouched" >Question Marks are Required</small>
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="form-group-level">Chosen Answer</label>
                 <input type="number" required #chosenAnswer="ngModel" 
                     [class.is-invalid]="chosenAnswer.invalid && chosenAnswer.touched"
@@ -94,7 +94,7 @@
                     class="form-control" name = "marksScored" [(ngModel)]="question.marksScored">
                 <small class ="text-danger" 
                 [class.d-none]="marksScored.valid || marksScored.untouched" >Marks Scored is Required</small>
-            </div>
+            </div> -->
             
             <br/>
             <button [disabled]="addQuestionForm.form.invalid" class="btn btn-primary" type="submit">Add Question</button>
@@ -102,33 +102,33 @@
         </form>
     
         <div class="container" *ngIf="show">
-            <h1>Question added Successfully. Added Question Details</h1>
+            <h3>Question added Successfully. Added Question Details</h3>
                 <table class="table" >
                     <!-- <tr>
                         <th>QuestionRESP TITLE </th><td>{{questionResp.questionTitle}}</td>
 
                     </tr> -->
                     <tr>
-                        <th>Test Id</th><td>{{question.testId}}</td>
+                        <th>Test Id</th><td>{{questionResp.testId}}</td>
                     </tr>
                     <tr>
-                        <th>Question Title</th><td>{{question.questionTitle}}</td>
+                        <th>Question Title</th><td>{{questionResp.questionTitle}}</td>
                     </tr>
                     <tr>
-                        <th>Question Options</th><td>{{questionOptions}}</td>
+                        <th>Question Options</th><td>{{"[ "+questionOptions+" ]"}}</td>
                     </tr>
                     <tr>
-                        <th>Question Answer</th><td>{{question.questionAnswer}}</td>
+                        <th>Question Answer</th><td>{{questionResp.questionAnswer}}</td>
                     </tr>
                     <tr>
-                        <th>Question Marks</th><td>{{question.questionMarks}}</td>
+                        <th>Question Marks</th><td>{{questionResp.questionMarks}}</td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th>Chosen Answer</th><td>{{question.chosenAnswer}}</td>
                     </tr>
                     <tr>
                         <th>Marks Scored</th><td>{{question.marksScored}}</td>
-                    </tr>
+                    </tr> -->
                 </table>
         </div>
     

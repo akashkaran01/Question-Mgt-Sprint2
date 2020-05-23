@@ -7,13 +7,7 @@
         </div>
 
         <div class="alert alert-danger" *ngIf="questionId.errors && (questionId.dirty || questionId.touched)">
-            <div *ngif="questionId.errors.required"> 
-                Question Id is required.
-            </div>
-        
-            <div *ngIf="questionId.errors.pattern">
-                   Question Id should be numeric.
-            </div>
+            Question Id is required
         </div>
 
         <button [disabled]="deleteForm.form.invalid" class="btn btn-primary" type="submit">Delete</button>
